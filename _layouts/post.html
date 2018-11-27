@@ -67,29 +67,27 @@ layout: default
                 <!-- 网易云跟帖 评论框 end -->
                 {% endif %}
 
-
-                {% if site.gitment_comment %}
                 <!-- gitment 评论框 start -->
+                {% if site.gitment_comment %}
                 <div id="cloud-tie-wrapper" class="cloud-tie-wrapper">
-                <!-- Gitment -->
                     <div id="container"></div>
                     <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
                     <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
                     <script>
                         var gitment = new Gitment({
                         id: '页面 ID', // 可选。默认为 location.href
-                        owner: 'daydreamerzz',
-                        repo: 'zzaoen.github.io',
+                        owner: 'nicolechen412 ',
+                        repo: 'Nicolechen412.github.io',
                         oauth: {
-                            client_id: '8a8c91ffd6294f046777',
-                            client_secret: '7771ea6634e73ce7b2f6edf4878ad61cbdc67538',
+                            client_id: '92363e9ee6435d827a13',
+                            client_secret: 'b1f5048ff067b140627bb6c9bb2825751acdff17',
                         },
                         })
                         gitment.render('container')
                     </script>
                 </div>
-                <!-- 网易云跟帖 评论框 end -->
                 {% endif %}
+                <!-- gitment 评论框 end -->
             </div>  
 
     <!-- Side Catalog Container -->
