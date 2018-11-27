@@ -9,6 +9,28 @@ layout: default
 <!-- Post Header -->
 {% include intro-header.html type='post' %}
 
+
+
+
+
+<!-- Gitment -->
+<div id="container"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+    var gitment = new Gitment({
+    id: '页面 ID', // 可选。默认为 location.href
+    owner: 'nicolechen412',
+    repo: 'nicolechen412.github.io',
+    oauth: {
+        client_id: 'e5c028898228bb8369d8',
+        client_secret: '9541d8e85a92babd1ab488d891b54a55c37f23fb',
+    },
+    })
+    gitment.render('container')
+</script>
+
+
 <!-- Post Content -->
 <article>
     <div class="container">

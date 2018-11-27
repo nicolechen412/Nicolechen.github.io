@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <meta name="description" content="关于程序与设计、黑客与画家 | 黄玄，Web & Mobile Lover，Software Engineer，UX Designer | 这里是 @Hux黄玄 的个人博客，与你一起发现更大的世界。">
-    <meta name="keywords"  content="黄玄, Hux黄玄, Hux, 鬼栈, huxpro, @huxpro, 黄玄的博客, Hux Blog, 博客, 个人网站, 互联网, Web, JavaScript, 前端, 设计">
+    <meta name="description" content="我是居居，漂亮的居居，我喜欢吃猪舌头，所以我吃东西老咬自己的舌头，啊呀呀">
+    <meta name="keywords"  content="Yumi，美食，coding">
     <meta name="theme-color" content="#000000">
     
     <!-- Open Graph -->
@@ -265,6 +265,28 @@
 
 
 
+
+
+
+
+<!-- Gitment -->
+<div id="container"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+    var gitment = new Gitment({
+    id: '页面 ID', // 可选。默认为 location.href
+    owner: 'nicolechen412',
+    repo: 'nicolechen412.github.io',
+    oauth: {
+        client_id: 'e5c028898228bb8369d8',
+        client_secret: '9541d8e85a92babd1ab488d891b54a55c37f23fb',
+    },
+    })
+    gitment.render('container')
+</script>
+
+
 <!-- Post Content -->
 <article>
     <div class="container">
@@ -299,9 +321,9 @@
 2
 3
 </pre></td><td class="rouge-code"><pre><span class="k">def</span> <span class="nf">is_halt</span><span class="p">(</span><span class="n">program</span><span class="p">,</span> <span class="nb">input</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-  <span class="c1"># 返回 True  如果 program(input) 会返回
-</span>  <span class="c1"># 返回 False 如果 program(input) 不返回
-</span></pre></td></tr></tbody></table></code></pre></div></div>
+  <span class="c"># 返回 True  如果 program(input) 会返回</span>
+  <span class="c"># 返回 False 如果 program(input) 不返回</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>（在这里，我们通过把一个函数作为另一个函数的输入来描述一个「程序」作为另一个「程序」的「输入」，如果你不熟悉「头等函数」的概念，你可以把所有文中的函数对应为一个具备该函数的对象。）</p>
 
@@ -328,16 +350,16 @@
   <span class="k">while</span><span class="p">(</span><span class="bp">True</span><span class="p">):</span>
       <span class="k">pass</span>
 
-<span class="c1"># 如果输入是 0，返回，否则无限循环
-</span><span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="nb">input</span><span class="p">):</span>
+<span class="c"># 如果输入是 0，返回，否则无限循环</span>
+<span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="nb">input</span><span class="p">):</span>
   <span class="k">if</span> <span class="nb">input</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
     <span class="k">return</span>
   <span class="k">else</span><span class="p">:</span>
     <span class="n">loop</span><span class="p">()</span>
 
-<span class="n">is_halt</span><span class="p">(</span><span class="n">foo</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>  <span class="c1"># 返回 True
-</span><span class="n">is_halt</span><span class="p">(</span><span class="n">foo</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># 返回 False
-</span></pre></td></tr></tbody></table></code></pre></div></div>
+<span class="n">is_halt</span><span class="p">(</span><span class="n">foo</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>  <span class="c"># 返回 True</span>
+<span class="n">is_halt</span><span class="p">(</span><span class="n">foo</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>  <span class="c"># 返回 False</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>是不是很棒？</p>
 
@@ -521,7 +543,7 @@
 <!-- disqus 公共JS代码 start (一个网页只需插入一次) -->
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES * * */
-    var disqus_shortname = "hux";
+    var disqus_shortname = "Nicole";
     var disqus_identifier = "/2017/12/12/halting-problem";
     var disqus_url = "http://localhost:4000/2017/12/12/halting-problem/";
 
@@ -603,13 +625,11 @@
 </ul>
 
                 <p class="copyright text-muted">
-                    Copyright &copy; Nicole Blog 2018
-                    <br>
-                    Powered by <a href="http://huangxuan.me">Hux Blog</a> |
+                    &copy; Nicole Blog 2018 |
                     <iframe
                         style="margin-left: 2px; margin-bottom:-5px;"
                         frameborder="0" scrolling="0" width="100px" height="20px"
-                        src="https://ghbtns.com/github-btn.html?user=huxpro&repo=huxpro.github.io&type=star&count=true" >
+                        src="https://ghbtns.com/github-btn.html?user=nicolechen412&repo=nicolechen412.github.io&type=star&count=true" >
                     </iframe>
                 </p>
             </div>
