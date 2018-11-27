@@ -7,11 +7,13 @@
                 {% include sns-links.html center=true %}
 
                 <p class="copyright text-muted">
-                    &copy; {{ site.title }} {{ site.time | date: '%Y' }} |
+                    Copyright &copy; {{ site.title }} {{ site.time | date: '%Y' }}
+                    <br>
+                    Powered by <a href="http://huangxuan.me">Hux Blog</a> |
                     <iframe
                         style="margin-left: 2px; margin-bottom:-5px;"
                         frameborder="0" scrolling="0" width="100px" height="20px"
-                        src="https://ghbtns.com/github-btn.html?user=nicolechen412&repo=nicolechen412.github.io&type=star&count=true" >
+                        src="https://ghbtns.com/github-btn.html?user=huxpro&repo=huxpro.github.io&type=star&count=true" >
                     </iframe>
                 </p>
             </div>
@@ -28,9 +30,6 @@
 
 <!-- Custom Theme JavaScript -->
 <script src="{{ "/js/hux-blog.min.js " | prepend: site.baseurl }}"></script>
-
-<!-- script pointing to jekyll-search.js -->
-<script src="/js/simple-jekyll-search.min.js"></script>
 
 <!-- Service Worker -->
 {% if site.service-worker %}
@@ -133,7 +132,7 @@
 
 <!-- Side Catalog -->
 {% if page.catalog %}
-<script>
+<script type="text/javascript">
     function generateCatalog (selector) {
 
         // interop with multilangual 
@@ -192,19 +191,6 @@
 </script>
 {% endif %}
 
-
-
-<script>
-    // Search Settings
-    SimpleJekyllSearch({
-        searchInput: document.getElementById('search-input'),
-        resultsContainer: document.getElementById('results-container'),
-        json: '/search.json',
-        searchResultTemplate: '<li><a herf="{url}">{title}</a></li>',
-        noResultsText: 'No results found',
-        fuzzy: true
-    });
-</script>
 
 <!-- Multi-Lingual -->
 {% if page.multilingual %}
