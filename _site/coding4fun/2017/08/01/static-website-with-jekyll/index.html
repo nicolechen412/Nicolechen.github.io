@@ -1286,8 +1286,27 @@ This is a test: {{ xxx }}
                 <!-- gitment 评论框 start -->
                 
 
+                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+                <script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script> 
+                <div id="gitalk-container"></div>     
+                <script type="text/javascript">
+                    var gitalk = new Gitalk({
 
-                <div id="lv-container" data-id="city" data-uid="MTAyMC80MTMxNi8xNzg2Mw==">
+                    // gitalk的主要参数
+                        clientID: '92363e9ee6435d827a13',
+                        clientSecret: 'b1f5048ff067b140627bb6c9bb2825751acdff17',
+                        repo: 'Nicolechen412.github.io',
+                        owner: 'nicolechen412',
+                        admin: ['nicolechen412'],
+                        id:window.location.pathname,
+
+                    });
+                    gitalk.render('gitalk-container');
+                </script> 
+
+
+
+                <!-- <div id="lv-container" data-id="city" data-uid="MTAyMC80MTMxNi8xNzg2Mw==">
                     <script type="text/javascript">
                    (function(d, s) {
                        var j, e = d.getElementsByTagName(s)[0];
@@ -1302,7 +1321,7 @@ This is a test: {{ xxx }}
                    })(document, 'script');
                     </script>
                 <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
-                </div>
+                </div> -->
                 <!-- <div id="cloud-tie-wrapper" class="cloud-tie-wrapper">
                     <div id="container"></div>
                     <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
