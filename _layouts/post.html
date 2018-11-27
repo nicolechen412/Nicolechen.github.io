@@ -72,23 +72,21 @@ layout: default
                 <!-- gitment 评论框 start -->
                 <div id="cloud-tie-wrapper" class="cloud-tie-wrapper">
                 <!-- Gitment -->
-                <div id="container"></div>
-                <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-                <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
-                <script>
-                    var gitment = new Gitment({
-                    id: '页面 ID', // 可选。默认为 location.href
-                    owner: 'nicolechen412',
-                    repo: 'nicolechen412.github.io',
-                    oauth: {
-                        client_id: 'e5c028898228bb8369d8',
-                        client_secret: '9541d8e85a92babd1ab488d891b54a55c37f23fb',
-                    },
-                    })
-                    gitment.render('container')
-</script>
-
-
+                    <div id="container"></div>
+                    <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+                    <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+                    <script>
+                        var gitment = new Gitment({
+                        id: '页面 ID', // 可选。默认为 location.href
+                        owner: 'nicolechen412',
+                        repo: 'Nicolechen412.github.io',
+                        oauth: {
+                            client_id: 'e5c028898228bb8369d8',
+                            client_secret: '9541d8e85a92babd1ab488d891b54a55c37f23fb',
+                        },
+                        })
+                        gitment.render('container')
+                    </script>
                 </div>
                 <!-- 网易云跟帖 评论框 end -->
                 {% endif %}
@@ -132,8 +130,8 @@ layout: default
   {% include mathjax_support.html %}
 {% endif %}
 
-{% if site.netease_comment %}
 <!-- 网易云跟帖JS代码 start -->
+<!-- {% if site.netease_comment %}
 <script src="https://img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
 <script>
   var cloudTieConfig = {
@@ -145,12 +143,11 @@ layout: default
   var yunManualLoad = true;
   Tie.loader("aHR0cHM6Ly9hcGkuZ2VudGllLjE2My5jb20vcGMvbGl2ZXNjcmlwdC5odG1s", true);
 </script>
+{% endif %} -->
 <!-- 网易云跟帖JS代码 end -->
-{% endif %}
 
-
-{% if site.disqus_username %}
 <!-- disqus 公共JS代码 start (一个网页只需插入一次) -->
+<!-- {% if site.disqus_username %}
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES * * */
     var disqus_shortname = "{{site.disqus_username}}";
@@ -163,8 +160,9 @@ layout: default
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
 </script>
+
+{% endif %} -->
 <!-- disqus 公共JS代码 end -->
-{% endif %}
 
 
 {% if site.anchorjs %}
