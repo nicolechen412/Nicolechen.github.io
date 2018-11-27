@@ -5,8 +5,8 @@
     <description>我是居居，漂亮的居居，我喜欢吃猪舌头，所以我吃东西老咬自己的舌头，啊呀呀</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 27 Nov 2018 14:46:04 +0800</pubDate>
-    <lastBuildDate>Tue, 27 Nov 2018 14:46:04 +0800</lastBuildDate>
+    <pubDate>Tue, 27 Nov 2018 15:31:41 +0800</pubDate>
+    <lastBuildDate>Tue, 27 Nov 2018 15:31:41 +0800</lastBuildDate>
     <generator>Jekyll v3.8.2</generator>
     
       <item>
@@ -58,20 +58,14 @@
 
 &lt;p&gt;&lt;a href=&quot;http://www.baidu.com&quot;&gt;http://www.baidu.com&lt;/a&gt;&lt;/p&gt;
 
-&lt;hr /&gt;
-
-&lt;hr /&gt;
-
-&lt;hr /&gt;
-
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
 2
 3
 4
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;){&lt;/span&gt;
-    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;a:&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;public static void main(String[] args){
+    int a = 1;
+    System.out.println(&quot;a:&quot; + a);
+}
 &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;table&gt;
@@ -371,6 +365,1025 @@ c2(no)-&amp;gt;op2-&amp;gt;e
         
         <category>计算理论</category>
         
+        
+      </item>
+    
+      <item>
+        <title>从WordPress到静态网站</title>
+        <description>&lt;p&gt;作为一个极简主义者，越来越受不了WordPress的臃肿。主要自己平时都是用Markdown来做记录，而WordPress支持的不是很好，另外有时写的md长文通过三方软件导出的html也不造放在wp的什么地方才合适，管理起来还不如几个静态页面来得方便。于是有了某天来个大整顿的想法。&lt;/p&gt;
+
+&lt;p&gt;对前端只停留在css的我，花了整三天时间，从Hexo到Jekyll再到Bootstrap，以及各种markdown2html解析器…最后基本算是从头写了一个基于Jekyll的website theme 😓  在此记录了各种前端坑，自认为还算详细吧。&lt;!-- more --&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;hexo&quot;&gt;Hexo&lt;/h1&gt;
+
+&lt;p&gt;主流的静态页面生成器有俩，一个Jekyll，一个Hexo，都支持Markdown。 前者用的是Ruby，后者为Node.js。&lt;/p&gt;
+
+&lt;p&gt;Hexo会比Jekyll搭建起来更方便一些，而且各种配置项的设计也很便捷，网站themes还很丰富，所以我一开始弄的就是这个。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://hexo.io/zh-cn/docs/&quot;&gt;Hexo官方文档&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/iissnan/hexo-theme-next&quot;&gt;next&lt;/a&gt; : 一款优雅并且功能强大的主题. &lt;a href=&quot;http://theme-next.iissnan.com/getting-started.html&quot;&gt;[doc]&lt;/a&gt; &lt;a href=&quot;[http://notes.iissnan.com](http://notes.iissnan.com/)&quot;&gt;[demo]&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;搭建方法上面这两个链接写的很详细。&lt;/p&gt;
+
+&lt;p&gt;这里主要记录一下让Hexo支持LaTex的注意地方。Hexo用MathJax时会有一些&lt;a href=&quot;http://2wildkids.com/2016/10/06/%E5%A6%82%E4%BD%95%E5%A4%84%E7%90%86Hexo%E5%92%8CMathJax%E7%9A%84%E5%85%BC%E5%AE%B9%E9%97%AE%E9%A2%98/#&quot;&gt;转义问题&lt;/a&gt;，经我自己测试，最好的方式是用&lt;code class=&quot;highlighter-rouge&quot;&gt;hexo-renderer-pandoc&lt;/code&gt;渲染器代替原有的&lt;code class=&quot;highlighter-rouge&quot;&gt;hexo-renderer-marked&lt;/code&gt;。而网上说的用&lt;code class=&quot;highlighter-rouge&quot;&gt;hexo-renderer-kramed&lt;/code&gt;，对矩阵的情况显示的不好。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;$ npm uninstall hexo-renderer-marked --save
+$ npm install hexo-renderer-kramed --save
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;jekyll&quot;&gt;Jekyll&lt;/h1&gt;
+
+&lt;p&gt;其实用Hexo/Jekyll+现成的主题，很方便就能搭出一个静态网站出来。只是除了代码高亮、LaTex这些功能之外，我还想能区分出code block 和普通无需highlighting的&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;pre&amp;gt;&lt;/code&gt;部分，还有其他一些改动。因为markdown解析的原因，基本所有themes出的效果都是将两者统一处理了。强迫症（其实就是zuo），主题挑来挑去都没找到个合心意的，比如next这种，太复杂，让我一个前端白痴改，哈，那还是自己从头写一个比较符合程序员造轮子的习惯吧。。。（捂脸&lt;/p&gt;
+
+&lt;p&gt;（至于为啥从Hexo转到了Jekyll，原因未明）&lt;/p&gt;
+
+&lt;h2 id=&quot;get-started&quot;&gt;Get Started&lt;/h2&gt;
+
+&lt;p&gt;参考：&lt;a href=&quot;https://jekyllrb.com/docs/home/&quot;&gt;Jekyll Doc&lt;/a&gt; (&lt;a href=&quot;http://jekyll.com.cn/docs/home/&quot;&gt;中文版&lt;/a&gt;，内容比较旧)&lt;/p&gt;
+
+&lt;h3 id=&quot;installation&quot;&gt;Installation&lt;/h3&gt;
+
+&lt;p&gt;本来在本地用Homebrew安装一路顺畅，但放到服务器就各种问题。&lt;/p&gt;
+
+&lt;p&gt;首先直接用apt-get下载的Ruby版本比较旧。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;# Install Ruby &amp;amp; RubyGems
+$ sudo apt-add-repository ppa:brightbox/ruby-ng
+$ sudo apt-get update
+$ sudo apt-get install ruby2.4
+
+# Install Jekyll and Bundler gems
+$ sudo gem install jekyll bundler
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;然后在&lt;code class=&quot;highlighter-rouge&quot;&gt;gem install jekyll&lt;/code&gt;时会报错：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;error: could not find a valid gem (&amp;gt;= 0) in any repository
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;参考&lt;a href=&quot;https://github.com/jekyll/jekyll/issues/1409&quot;&gt;github issues&lt;/a&gt;，F*k GWF，需要将&lt;code class=&quot;highlighter-rouge&quot;&gt;https://rubygems.org/&lt;/code&gt;换成其他可访问的镜像，如&lt;a href=&quot;http://gems.ruby-china.org/&quot;&gt;Ruby China 镜像&lt;/a&gt;。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;$ gem sources --remove https://rubygems.org/
+$ gem sources -a https://gems.ruby-china.org/
+$ gem sources -l
+*** CURRENT SOURCES ***
+https://gems.ruby-china.org/   
+# 确保只有 gems.ruby-china.org
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;重新尝试 install jekyll，还是报错：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;current directory: /var/lib/gems/2.4.0/gems/ffi-1.9.18/ext/ffi_c
+/usr/bin/ruby2.4 -r ./siteconf20170801-1836-1n75umz.rb extconf.rb
+mkmf.rb can't find header files for ruby at /usr/lib/ruby/include/ruby.h
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;解决方式：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;$ sudo apt-get install ruby2.4-dev
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;之后就可以正常安装jekyll了。&lt;/p&gt;
+
+&lt;p&gt;另外，根据&lt;a href=&quot;http://gems.ruby-china.org/&quot;&gt;Ruby China 镜像&lt;/a&gt;，你可以用 Bundler 的 &lt;a href=&quot;http://bundler.io/v1.5/bundle_config.html#gem-source-mirrors&quot;&gt;Gem 源代码镜像命令&lt;/a&gt;：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;$ bundle config mirror.https://rubygems.org https://gems.ruby-china.org
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;这样就不用改你的 Gemfile 中的 source了。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;source &quot;https://rubygems.org&quot;
+...
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;basic-command&quot;&gt;Basic Command&lt;/h3&gt;
+
+&lt;p&gt;用jekyll新建一个site:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;$ jekyll new myblog
+$ cd myblog
+$ bundle exec jekyll serve
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;打开http://localhost:4000测试。&lt;/p&gt;
+
+&lt;p&gt;默认使用的是&lt;code class=&quot;highlighter-rouge&quot;&gt;Minima theme&lt;/code&gt;. 目前基于jekyll 3.x的themes还比较少。
+因为我是自己新建的theme，就不用这样方式了。&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;启动服务：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;# 启动服务
+$ jekyll serve
+
+# 启动服务(gem-based theme)
+$ bundle exec jekyll serve
+
+# 脱离终端在后台运行
+# 如果你想关闭服务器，可以使用`kill -9 1234`命令，&quot;1234&quot; 是进程号（PID）。
+# 如果你找不到进程号，那么就用`ps aux | grep jekyll`命令来查看，然后关闭服务器。
+$ jekyll serve --detach
+
+# 和jekyll serve相同，但是会查看变更并且自动再生成。
+$ jekyll serve --watch
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;生成静态页面（位于&lt;code class=&quot;highlighter-rouge&quot;&gt;_site&lt;/code&gt;目录）：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;$ jekyll build
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;或者用：(watched for changes, and regenerated automatically.)&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;$ jekyll build --watch
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;set-up-your-site-on-vps&quot;&gt;Set up Your Site on VPS&lt;/h1&gt;
+
+&lt;p&gt;网上清一色都是通过github pages来发布的站点，然后通过修改&lt;code class=&quot;highlighter-rouge&quot;&gt;CNAME&lt;/code&gt;文件来达到绑定域名的目的。&lt;/p&gt;
+
+&lt;p&gt;我这里是放到VPS上，需要自己搭建web server环境。&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Jekyll is a static site generator, not a webserver. You may generate the static files and serve with webserver like &lt;code class=&quot;highlighter-rouge&quot;&gt;nginx&lt;/code&gt;, which provides such abilities.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;参考：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.digitalocean.com/community/tutorials/how-to-get-started-with-jekyll-on-an-ubuntu-vps&quot;&gt;How To Get Started with Jekyll on an Ubuntu VPS&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://thomasroest.com/2016/11/05/set-up-a-jekyll-site-on-a-vps-with-ubuntu-nginx-and-letsencrypt.html&quot;&gt;Set up a Jekyll site on a vps with Ubuntu, Nginx and Letsencrypt&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;因为是静态网站，所以Jekyll其实安装在本地就可以，静态页面也放在本地。然后将Jekyll生成的静态HTML文件（&lt;code class=&quot;highlighter-rouge&quot;&gt;_site&lt;/code&gt;目录下）通过类似FTP的方式上传到VPS就行。&lt;/p&gt;
+
+&lt;p&gt;将本地数据上传到远程服务用&lt;code class=&quot;highlighter-rouge&quot;&gt;scp&lt;/code&gt;就行，后来了解到&lt;code class=&quot;highlighter-rouge&quot;&gt;rsync&lt;/code&gt;这个命令。&lt;code class=&quot;highlighter-rouge&quot;&gt;rsync&lt;/code&gt;只传送两个文件的不同部分，而不是每次都整份传送，因此速度很快。&lt;/p&gt;
+
+&lt;p&gt;先来理清关系：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt; for write our content&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://nginx.org/en/&quot;&gt;nginx&lt;/a&gt; to serve our content&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.capistranorb.com/&quot;&gt;Capistrano&lt;/a&gt; to deploy&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;nginx&quot;&gt;Nginx&lt;/h2&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;sudo apt-get install nginx
+sudo service nginx start
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;然后输入vps地址就能看到nginx的欢迎页面。&lt;/p&gt;
+
+&lt;p&gt;查看运行状态：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;sudo service nginx status
+# 显示：
+- nginx is running
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;修改 nginx 配置：sudo vim /etc/nginx/sites-enabled/default&lt;/p&gt;
+
+&lt;p&gt;将 &lt;code class=&quot;highlighter-rouge&quot;&gt;root /usr/share/nginx/html;&lt;/code&gt; 注释掉，改为 &lt;code class=&quot;highlighter-rouge&quot;&gt;root /home/deploy/your_blog_name/_site&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;将 &lt;code class=&quot;highlighter-rouge&quot;&gt;server_name localhost;&lt;/code&gt; 注释掉，改为 &lt;code class=&quot;highlighter-rouge&quot;&gt;server_name your_domain.com;&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;重新启动nginx，就能看到建的blog内容了。&lt;/p&gt;
+
+&lt;h2 id=&quot;capistrano&quot;&gt;Capistrano&lt;/h2&gt;
+
+&lt;p&gt;Capistrano 是一个 Ruby 程序，参考第一个文章链接，它可以通过Git复制代码到服务器等操作。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;sudo gem install capistrano 
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;这里先存留吧，暂时还没用到Capistrano。&lt;/p&gt;
+
+&lt;p&gt;目前是按照&lt;a href=&quot;http://blog.lszero.com/coding4fun/multisite-setting.html&quot;&gt;利用Apache进行多站点配置&lt;/a&gt;设置的。&lt;/p&gt;
+
+&lt;h1 id=&quot;create-new-theme-from-scratch&quot;&gt;Create New Theme From Scratch&lt;/h1&gt;
+
+&lt;p&gt;既然是from scratch，就先把jekyll的目录结构理清，然后借助bootstrap框架创建主题，最后就是各种features了。&lt;/p&gt;
+
+&lt;h2 id=&quot;basic&quot;&gt;Basic&lt;/h2&gt;
+
+&lt;h3 id=&quot;directory-structure&quot;&gt;Directory Structure&lt;/h3&gt;
+
+&lt;p&gt;用&lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll new-theme xxx&lt;/code&gt;命令，就可以创建出一个theme需要的基本目录项。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;.
+├── _config.yml
+├── _drafts
+|   ├── begin-with-the-crazy-ideas.textile
+|   └── on-simplicity-in-technology.markdown
+├── _includes
+|   ├── footer.html
+|   └── header.html
+├── _layouts
+|   ├── default.html
+|   ├── post.html
+├── _posts
+|   ├── 2007-10-29-why-every-programmer-should-play-nethack.textile
+|   └── 2009-04-26-barcamp-boston-4-roundup.textile
+├── _data
+|   └── members.yml
+├── _site
+└── index.html
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;说明：&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; 是配置文件。默认配置参见：&lt;a href=&quot;https://jekyllrb.com/docs/configuration/#default-configuration&quot;&gt;https://jekyllrb.com/docs/configuration/#default-configuration&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;_includes&lt;/code&gt; 里的文件为了布局重用。&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;_layouts&lt;/code&gt; 站点布局模板。布局可以在 &lt;a href=&quot;http://jekyll.com.cn/docs/frontmatter/&quot;&gt;YAML 头信息&lt;/a&gt;中根据不同文章进行选择。&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; 将md文件以&lt;code class=&quot;highlighter-rouge&quot;&gt;2017-08-01-welcome-to-jekyll.md&lt;/code&gt;的格式放到该目录中。&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;_drafts&lt;/code&gt; 中的md文件直接以&lt;code class=&quot;highlighter-rouge&quot;&gt;title.md&lt;/code&gt;命名，并不会发布出来。当运行&lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;或者&lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll build --drafts&lt;/code&gt;时，草稿文章会被加上日期值并发布出来。&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;_site&lt;/code&gt; 存放jekyll转化完成的html文件。有时修改效果不生效，可以尝试删除该目录。&lt;/p&gt;
+
+&lt;h3 id=&quot;variables&quot;&gt;Variables&lt;/h3&gt;
+
+&lt;p&gt;自带的变量详见：&lt;a href=&quot;http://jekyllrb.com/docs/variables/&quot;&gt;Variables&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;或者通过&lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt;添加。&lt;/p&gt;
+
+&lt;h3 id=&quot;need-to-know&quot;&gt;Need to Know&lt;/h3&gt;
+
+&lt;p&gt;若在&lt;code class=&quot;highlighter-rouge&quot;&gt;index.html&lt;/code&gt;的YAML头信息中加入：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;---
+layout: default
+...
+---
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;则在&lt;code class=&quot;highlighter-rouge&quot;&gt;default.html&lt;/code&gt;中调用&lt;code class=&quot;highlighter-rouge&quot;&gt;{{ content }}&lt;/code&gt;时，就会把&lt;code class=&quot;highlighter-rouge&quot;&gt;index.html&lt;/code&gt;中的所有内容放到调用处。&lt;/p&gt;
+
+&lt;h2 id=&quot;bootstrap&quot;&gt;Bootstrap&lt;/h2&gt;
+
+&lt;p&gt;Bootstrap前端框架真是我这种前端白痴的福音。&lt;/p&gt;
+
+&lt;p&gt;下载&lt;a href=&quot;https://github.com/twbs/bootstrap/releases/download/v3.3.7/bootstrap-3.3.7-dist.zip&quot;&gt;Bootstrp&lt;/a&gt;，我这里将解压后的文件放到了&lt;code class=&quot;highlighter-rouge&quot;&gt;assets/bootstrap-3.3.7-dist&lt;/code&gt; 目录下。&lt;/p&gt;
+
+&lt;p&gt;使用Bootstrap：&lt;/p&gt;
+
+&lt;p&gt;参考Bootstrap官网里给的&lt;a href=&quot;http://getbootstrap.com/getting-started/#template&quot;&gt;基本HTML模板&lt;/a&gt;，&lt;/p&gt;
+
+&lt;p&gt;（1）将下面这行代码改成自己的相应路径后，放到&lt;code class=&quot;highlighter-rouge&quot;&gt;head.html&lt;/code&gt; 的&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;head&amp;gt;&amp;lt;/head&amp;gt;&lt;/code&gt; 标签中。&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- Bootstrap --&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;link&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;rel=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;stylesheet&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/assets/bootstrap-3.3.7-dist/css/bootstrap.min.css&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;（2）将下两行改成自己的相应路径后，放到&lt;code class=&quot;highlighter-rouge&quot;&gt;default.html&lt;/code&gt; 的&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;body&amp;gt;&amp;lt;/body&amp;gt;&lt;/code&gt; 标签中的最下方，为了最后加载。&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- jQuery (necessary for Bootstrap's JavaScript plugins) --&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- Include all compiled plugins (below), or include individual files as needed --&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/assets/bootstrap-3.3.7-dist/js/bootstrap.min.js&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;若没效果，删除 &lt;code class=&quot;highlighter-rouge&quot;&gt;_site&lt;/code&gt; 目录再试试，或者用命令重新 build。&lt;/p&gt;
+
+&lt;h3 id=&quot;navbar&quot;&gt;NavBar&lt;/h3&gt;
+
+&lt;p&gt;参考Bootstrap官网给的&lt;a href=&quot;http://getbootstrap.com/components/#navbar&quot;&gt;示例代码&lt;/a&gt;，写入&lt;code class=&quot;highlighter-rouge&quot;&gt;header.html&lt;/code&gt;文件中。&lt;/p&gt;
+
+&lt;p&gt;然后在&lt;code class=&quot;highlighter-rouge&quot;&gt;default.html&lt;/code&gt;的&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;body&amp;gt;&amp;lt;/body&amp;gt;&lt;/code&gt;标签中引入&lt;code class=&quot;highlighter-rouge&quot;&gt;{% include header.html %}&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;注意的点是，&lt;/p&gt;
+
+&lt;p&gt;若使用了&lt;code class=&quot;highlighter-rouge&quot;&gt;.navbar-fixed-top&lt;/code&gt; 类，这个固定的导航条会遮住页面上的其它内容，除非你给 &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;body&amp;gt;&lt;/code&gt; 元素底部设置了 &lt;code class=&quot;highlighter-rouge&quot;&gt;padding&lt;/code&gt;，例如：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;body { padding-top: 70px; }
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;features&quot;&gt;Features&lt;/h2&gt;
+
+&lt;h3 id=&quot;post-excerpt&quot;&gt;Post Excerpt&lt;/h3&gt;
+
+&lt;p&gt;在&lt;code class=&quot;highlighter-rouge&quot;&gt;index.html&lt;/code&gt; 中显示文章摘要。参见&lt;a href=&quot;https://jekyllrb.com/docs/posts/#post-excerpts&quot;&gt;https://jekyllrb.com/docs/posts/#post-excerpts&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;（1）自带的&lt;code class=&quot;highlighter-rouge&quot;&gt;{{ post.excerpt }}&lt;/code&gt; 会自动取第一段的内容作为摘要。&lt;/p&gt;
+
+&lt;p&gt;若想自定义，&lt;/p&gt;
+
+&lt;p&gt;（2）在&lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; 文件中指定摘要的分隔符：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;excerpt_separator: &amp;lt;!-- more --&amp;gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;这样会覆盖自带的&lt;code class=&quot;highlighter-rouge&quot;&gt;{{ post.excerpt }}&lt;/code&gt;功能，然后在文章内容需要分隔的摘要后面加上&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;!-- more --&amp;gt;&lt;/code&gt;。而&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;!-- more --&amp;gt;&lt;/code&gt; 本身作为注释，不会影响 markdown 的显示。&lt;/p&gt;
+
+&lt;p&gt;（3）或者采用这样的方式：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;{{ post.content | strip_html | truncatewords:75 }}
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;pagination&quot;&gt;Pagination&lt;/h3&gt;
+
+&lt;p&gt;用于&lt;code class=&quot;highlighter-rouge&quot;&gt;index.html&lt;/code&gt; 里对文章的分页显示功能。&lt;/p&gt;
+
+&lt;p&gt;（1）首先安装&lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll-paginate&lt;/code&gt;：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;$ sudo gem install jekyll-paginate
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;在配置文件&lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt;中添加：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;plugins:
+  - jekyll-paginate
+paginate: 5
+paginate_path: &quot;/pages:num/&quot;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;其中，&lt;code class=&quot;highlighter-rouge&quot;&gt;paginate: 5&lt;/code&gt; 设置的是分页数；
+&lt;code class=&quot;highlighter-rouge&quot;&gt;paginate_path: &quot;/pages:num/&quot;&lt;/code&gt; 设置的是URL的显示格式，如 http://localhost:4000/pages2/。&lt;/p&gt;
+
+&lt;p&gt;（2）然后参考&lt;a href=&quot;https://jekyllrb.com/docs/pagination/&quot;&gt;https://jekyllrb.com/docs/pagination/&lt;/a&gt;在&lt;code class=&quot;highlighter-rouge&quot;&gt;index.html&lt;/code&gt;添加分页功能，并结合Bootstrap里的分页样式修改：&lt;a href=&quot;http://getbootstrap.com/components/#pagination&quot;&gt;http://getbootstrap.com/components/#pagination&lt;/a&gt;。&lt;/p&gt;
+
+&lt;h3 id=&quot;sidebar&quot;&gt;SideBar&lt;/h3&gt;
+
+&lt;p&gt;这里利用了 bootstrap 的栅格布局，栅格布局将一个页面分割成12个等宽的列。(详见 &lt;a href=&quot;http://getbootstrap.com/css/#grid-example-basic&quot;&gt;example&lt;/a&gt;)&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;row-fluid&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;col-md-9&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;h2&amp;gt;&lt;/span&gt;Content&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h2&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;col-md-3&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;h2&amp;gt;&lt;/span&gt;Sidebar&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h2&amp;gt;&lt;/span&gt;  
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;让侧边栏固定住，不随页面滚动而滚动：加入&lt;code class=&quot;highlighter-rouge&quot;&gt;class=&quot;affix&quot;&lt;/code&gt;。&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;说明：&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;我这里设置两种sidebar：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;一种是&lt;code class=&quot;highlighter-rouge&quot;&gt;index.html&lt;/code&gt;里的，用于显示author信息，写在&lt;code class=&quot;highlighter-rouge&quot;&gt;main_sidebar.html&lt;/code&gt;中；&lt;/li&gt;
+  &lt;li&gt;另一种是&lt;code class=&quot;highlighter-rouge&quot;&gt;post&lt;/code&gt;对应的，用于显示目录列表，写在&lt;code class=&quot;highlighter-rouge&quot;&gt;post_sidebar.html&lt;/code&gt;中。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;social-icons&quot;&gt;Social Icons&lt;/h3&gt;
+
+&lt;p&gt;icons用的是 &lt;a href=&quot;http://fontawesome.io/&quot;&gt;fontawesome&lt;/a&gt;。我这里将解压后的 &lt;code class=&quot;highlighter-rouge&quot;&gt;fonts&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;css&lt;/code&gt;文件夹复制到了&lt;code class=&quot;highlighter-rouge&quot;&gt;assets&lt;/code&gt;目录下。&lt;/p&gt;
+
+&lt;p&gt;在&lt;code class=&quot;highlighter-rouge&quot;&gt;head.html&lt;/code&gt;中添加：&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;link&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;rel=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;stylesheet&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/assets/css/font-awesome.min.css&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;要使用哪个图标，直接去&lt;a href=&quot;http://fontawesome.io/icons/&quot;&gt;官网&lt;/a&gt;搜代码就行。&lt;/p&gt;
+
+&lt;p&gt;修改图标颜色，因为其本身就是一种字体，故使用&lt;code class=&quot;highlighter-rouge&quot;&gt;color &lt;/code&gt;修改即可。&lt;/p&gt;
+
+&lt;p&gt;修改图标大小也是，用&lt;code class=&quot;highlighter-rouge&quot;&gt;font-size&lt;/code&gt;即可，或者：&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;i&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;fa fa-camera-retro&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/i&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;i&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;fa fa-camera-retro fa-2x&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/i&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;i&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;fa fa-camera-retro fa-3x&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/i&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;对官网搜不到的社交网站图标怎么办，如“知乎”的：&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;btn&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;title=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Zhihu&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;span&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;fa-stack fa-lg&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;i&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;fa fa-circle fa-stack-2x&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/i&amp;gt;&amp;lt;i&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;fa fa-stack-1x fa-inverse&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;知&lt;span class=&quot;nt&quot;&gt;&amp;lt;/i&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;table-of-content&quot;&gt;Table of Content&lt;/h3&gt;
+
+&lt;h4 id=&quot;post中显示目录&quot;&gt;post中显示目录&lt;/h4&gt;
+
+&lt;p&gt;kramdown自带了解析目录的功能。详见：&lt;a href=&quot;https://kramdown.gettalong.org/converter/html.html#toc&quot;&gt;https://kramdown.gettalong.org/converter/html.html#toc&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;在md文件中加入：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;# 无序列表
+* TOC
+{:toc}
+{: .this-is-my-class}
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;或者：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;# 有序列表
+1. TOC
+{:toc}
+{: .this-is-my-class}
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;并且可在&lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt;中设置要显示的标题级别：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;kramdown: 
+  toc_levels: &quot;2,3&quot; 
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h4 id=&quot;sidebar中显示目录&quot;&gt;sidebar中显示目录&lt;/h4&gt;
+
+&lt;p&gt;侧边栏目录随浏览内容动态滚动功能，利用Bootstrap的&lt;a href=&quot;http://getbootstrap.com/javascript/#scrollspy&quot;&gt;Scrollspy&lt;/a&gt;来实现。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;参考 &lt;a href=&quot;http://www.thomaszhao.cn/2015/01/08/how-do-i-build-this-jekyll-blog/#toctable-of-content-&quot;&gt;application.js&lt;/a&gt; 获取目录结构，和标题滚动效果。&lt;/li&gt;
+  &lt;li&gt;参考 &lt;a href=&quot;https://www.mywpku.com/jquery-pin-elements.html&quot;&gt;JQUERY实现侧边栏随滚动条滚动并固定位置&lt;/a&gt; 来固定sidebar的位置，并且效果是：当滚动到指定模块时才置顶该模块。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;最后写了个 &lt;a href=&quot;https://github.com/lszero/lszero.github.io/blob/master/assets/js/toc/TOC.js&quot;&gt;TOP.js&lt;/a&gt; 终于实现得还算满意了。（当然，还要配合 css 使用）&lt;/p&gt;
+
+&lt;p&gt;另外，其它不错的实现：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://afeld.github.io/bootstrap-toc/&quot;&gt;bootstrap-toc&lt;/a&gt; (&lt;a href=&quot;https://github.com/afeld/bootstrap-toc/tree/gh-pages/dist&quot;&gt;github&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://gregfranko.com/jquery.tocify.js/&quot;&gt;Tocify plugin&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://projects.jga.me/toc/&quot;&gt;TOC plugin&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;hide-sidebar-for-mobile-display&quot;&gt;Hide sidebar for mobile display&lt;/h4&gt;
+
+&lt;p&gt;手机显示时，隐藏侧边栏，否则会显示混乱。&lt;/p&gt;
+
+&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;k&quot;&gt;@media&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;max-width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;800px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nf&quot;&gt;#sidebar&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;none&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;!important&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;search&quot;&gt;Search&lt;/h3&gt;
+
+&lt;p&gt;参考：&lt;a href=&quot;http://getbootstrap.com/components/#input-groups-buttons&quot;&gt;Button addons&lt;/a&gt; &amp;amp; &lt;a href=&quot;http://getbootstrap.com/components/#navbar-forms&quot;&gt;Forms&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;将下面代码加入&lt;code class=&quot;highlighter-rouge&quot;&gt;header.html&lt;/code&gt;中：&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;form&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;navbar-form navbar-left&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;role=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;search&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;input-group&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;span&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;input-group-btn&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;button&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;btn btn-default&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;button&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Go!&lt;span class=&quot;nt&quot;&gt;&amp;lt;/button&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/span&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;input&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;text&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;form-control&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;placeholder=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Search&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/form&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;对于search逻辑，目前还没找到一个很好的方式去实现。。。（如果知道的，麻烦告诉我一声！）&lt;/p&gt;
+
+&lt;h3 id=&quot;back-to-top&quot;&gt;Back to Top&lt;/h3&gt;
+
+&lt;p&gt;该功能我放在了&lt;code class=&quot;highlighter-rouge&quot;&gt;post_sidebar.html&lt;/code&gt;中：&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;#top&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;back-to-top&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;^&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;其实就是个link，最后再用css设置样式。&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;更新：&lt;/p&gt;
+
+&lt;p&gt;为了不让footer覆盖掉 back-to-top，只能把back-to-top写在footer后面。故改在了&lt;code class=&quot;highlighter-rouge&quot;&gt;default.html&lt;/code&gt;里。&lt;/p&gt;
+
+&lt;h3 id=&quot;comments&quot;&gt;Comments&lt;/h3&gt;
+
+&lt;h4 id=&quot;gitment&quot;&gt;Gitment&lt;/h4&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://imsun.net/posts/gitment-introduction/&quot;&gt;Gitment&lt;/a&gt; 挺不错的的。按照官网的说明引入js后，在其中修改自己的OAuth Application信息。&lt;/p&gt;
+
+&lt;h4 id=&quot;isso&quot;&gt;isso&lt;/h4&gt;
+
+&lt;p&gt;这是自建评论系统的一种方式。&lt;a href=&quot;https://posativ.org/isso/&quot;&gt;官网&lt;/a&gt;需要fq.&lt;/p&gt;
+
+&lt;p&gt;我之后用的也是这种方法，详见：&lt;a href=&quot;http://blog.lszero.com/coding4fun/comments-with-isso.html&quot;&gt;搭建Isso评论服务&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;archives&quot;&gt;Archives&lt;/h3&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;{% for post in paginator.posts %}&lt;/code&gt; 并不能使用，因为paginator只会对&lt;code class=&quot;highlighter-rouge&quot;&gt;index.html&lt;/code&gt;有效。&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;site.posts | size&lt;/code&gt; 获取总的文章数。&lt;/p&gt;
+
+&lt;p&gt;因为jekyll不支持按日期获取，只能暂时用&lt;code class=&quot;highlighter-rouge&quot;&gt;{% for post in site.posts %}&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;这部分待补充吧。&lt;/p&gt;
+
+&lt;h3 id=&quot;category&quot;&gt;Category&lt;/h3&gt;
+
+&lt;p&gt;参考 &lt;a href=&quot;https://segmentfault.com/a/1190000000406017#articleHeader2&quot;&gt;使用Category分类&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;首先在每个文章的YAML头信息中定义类别，如：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;---
+layout: post
+title:  &quot;your title&quot;
+categories: Algorithm
+---
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;获取所有类别：&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;{% for category in site.categories %}
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;h2&amp;gt;&lt;/span&gt;{{ category[0] }} ({{ category[1].size }})&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h2&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;ul&amp;gt;&lt;/span&gt;
+  {% for post in category[1] %}
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&lt;/span&gt;{{ post.date | date:&quot;%d/%m/%Y&quot;}}&lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{{ post.url }}&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;{{ post.title }}&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+  {% endfor %}
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/ul&amp;gt;&lt;/span&gt;
+{% endfor %}
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;使用：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;site.categories.size&lt;/code&gt; 获取总的类别数。&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;category[0]&lt;/code&gt; 获取分类名称。&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;category[1].size&lt;/code&gt; 获取该分类下文章的数目。&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;site.categories.CATEGORY&lt;/code&gt; 可得到某个特定类别的所有文章。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;更多变量可参见：&lt;a href=&quot;http://jekyllrb.com/docs/variables/#site-variables&quot;&gt;http://jekyllrb.com/docs/variables/#site-variables&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;输出单个分类下的所有文章：&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;site.categories.CATEGORY&lt;/code&gt; 需要手动指定，并不是很方便。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://segmentfault.com/a/1190000000406017#articleHeader2&quot;&gt;使用Category分类&lt;/a&gt;这篇文章里使用js来实现。&lt;/p&gt;
+
+&lt;p&gt;我这里是先生成好&lt;code class=&quot;highlighter-rouge&quot;&gt;categories.html&lt;/code&gt;，里面列出了所有的文章。然后利用锚点&lt;code class=&quot;highlighter-rouge&quot;&gt;categories.html#xxx&lt;/code&gt;进行跳转到指定的类别。&lt;/p&gt;
+
+&lt;h3 id=&quot;tags&quot;&gt;Tags&lt;/h3&gt;
+
+&lt;p&gt;参考&lt;a href=&quot;https://segmentfault.com/a/1190000000406017#articleHeader5&quot;&gt;使用文章标签索引文章&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;首先在每个文章的YAML头信息中定义tags，如：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;---
+layout: post
+title:  &quot;your title&quot;
+tags: [github, jekyll]
+---
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;和&lt;a href=&quot;#category&quot;&gt;category&lt;/a&gt;的设置方法差不多，就不赘述了。&lt;/p&gt;
+
+&lt;h3 id=&quot;latex&quot;&gt;Latex&lt;/h3&gt;
+
+&lt;p&gt;参考：&lt;a href=&quot;https://jekyllrb.com/docs/extras/#math-support&quot;&gt;https://jekyllrb.com/docs/extras/#math-support&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;我这里为了避免所有pages都引入mathjax相关js代码，采用了不同的设置：&lt;/p&gt;
+
+&lt;p&gt;在配置文件&lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt;中添加：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;mathjax: false
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;在&lt;code class=&quot;highlighter-rouge&quot;&gt;head.html&lt;/code&gt;中添加：&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;{% if page.mathjax %}
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;text/javascript&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+{% endif %}
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;然后在需要引入mathjax的md文件头中加入&lt;code class=&quot;highlighter-rouge&quot;&gt;mathjax: true&lt;/code&gt;，如：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;---
+layout: post
+...
+mathjax: true
+---
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;support-&quot;&gt;Support $&lt;/h4&gt;
+
+&lt;p&gt;默认只支持双&lt;code class=&quot;highlighter-rouge&quot;&gt;$&lt;/code&gt;符，修改：&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;script&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;text/x-mathjax-config&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;MathJax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Hub&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Config&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;TeX&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;equationNumbers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;autoNumber&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;AMS&quot;&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;tex2jax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;inlineMath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'$'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'$'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;displayMath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'$$'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'$$'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;processEscapes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/script&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;mathjax-rendering-problem&quot;&gt;Mathjax Rendering Problem&lt;/h4&gt;
+
+&lt;p&gt;若latex公式中包含&lt;code class=&quot;highlighter-rouge&quot;&gt;|&lt;/code&gt;符，如&lt;code class=&quot;highlighter-rouge&quot;&gt;|a|&lt;/code&gt;，会被markdown解析器当成&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;table&amp;gt;&amp;lt;/table&amp;gt;&lt;/code&gt;来处理。&lt;/p&gt;
+
+&lt;p&gt;又如，定义矩阵时，其中的换行&lt;code class=&quot;highlighter-rouge&quot;&gt;\\&lt;/code&gt;也会被解析出问题，把第一个&lt;code class=&quot;highlighter-rouge&quot;&gt;\&lt;/code&gt;当成了转义符。&lt;/p&gt;
+
+&lt;p&gt;解决方式：&lt;/p&gt;
+
+&lt;p&gt;对第一种情况，根据 &lt;a href=&quot;https://kramdown.gettalong.org/syntax.html#math-blocks&quot;&gt;Syntax | Kramdown&lt;/a&gt; 上的说明，将&lt;code class=&quot;highlighter-rouge&quot;&gt;|&lt;/code&gt;用&lt;code class=&quot;highlighter-rouge&quot;&gt;\vert&lt;/code&gt;来代替。&lt;/p&gt;
+
+&lt;p&gt;对第二种情况，用双&lt;code class=&quot;highlighter-rouge&quot;&gt;$$&lt;/code&gt;符解决转义问题。&lt;/p&gt;
+
+&lt;h3 id=&quot;code-highlighting&quot;&gt;Code Highlighting&lt;/h3&gt;
+
+&lt;p&gt;Jekyll 3.x 自带了rouge代码高亮的功能，但是不造为啥一直not working（难道又被看脸了。。&lt;/p&gt;
+
+&lt;p&gt;于是这里用的是&lt;a href=&quot;https://highlightjs.org/&quot;&gt;highlightjs&lt;/a&gt;。在&lt;code class=&quot;highlighter-rouge&quot;&gt;head.html&lt;/code&gt;里添加：&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;link&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;rel=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;stylesheet&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/lib/highlight/styles/hybrid.css&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/lib/highlight/highlight.pack.js&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;script&amp;gt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;hljs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;initHighlightingOnLoad&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;我这里把下载的&lt;code class=&quot;highlighter-rouge&quot;&gt;highlightjs&lt;/code&gt;的相关文件放在了&lt;code class=&quot;highlighter-rouge&quot;&gt;lib&lt;/code&gt;目录下，样式选的是&lt;code class=&quot;highlighter-rouge&quot;&gt;hybrid.css&lt;/code&gt;。（monokai-sublime 和 hybrid 配色也不错。）&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;highlightjs&lt;/code&gt;会解析并高亮&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;pre&amp;gt;&amp;lt;code&amp;gt;...&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt;&lt;/code&gt;中的内容。如&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;pre&amp;gt;&amp;lt;code&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;html&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;...&lt;span class=&quot;nt&quot;&gt;&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;若不需要高亮则设为：&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;pre&amp;gt;&amp;lt;code&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;nohighlight&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;...&lt;span class=&quot;nt&quot;&gt;&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;这里有个麻烦的地方，若md里没有指明语言，&lt;code class=&quot;highlighter-rouge&quot;&gt;highlightjs&lt;/code&gt;也会自动检测是什么语言。如果不想对某个code block进行高亮，有两种解决方式：（当然了，我比较折腾，一般人也不需要这个。。（捂脸）&lt;/p&gt;
+
+&lt;p&gt;（1）每次手动加入&lt;code class=&quot;highlighter-rouge&quot;&gt;nohighlight&lt;/code&gt;。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;​```nohighlight
+xxx
+​```
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;（2）修改markdown解析器。&lt;/p&gt;
+
+&lt;p&gt;第一种方式比较麻烦，但&lt;code class=&quot;highlighter-rouge&quot;&gt;highlightjs&lt;/code&gt;又没有提供关闭&lt;code class=&quot;highlighter-rouge&quot;&gt;highlightAuto&lt;/code&gt;的接口。&lt;/p&gt;
+
+&lt;h3 id=&quot;custom-markdown-parser&quot;&gt;Custom Markdown Parser&lt;/h3&gt;
+
+&lt;p&gt;在&lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt;中可以看到，默认使用的是&lt;code class=&quot;highlighter-rouge&quot;&gt;kramdown&lt;/code&gt;解析器。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;markdown: kramdown
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;关于&lt;a href=&quot;https://jekyllrb.com/docs/configuration/#custom-markdown-processors&quot;&gt;Custom Markdown Processors&lt;/a&gt;官网有一些说明，好吧，没看懂，毕竟不会Ruby。kramdown也不能以overwrited的方式改写相应的convert方法，然后又写了段js代码试图修改kramdown解析出的html，但还是没成功。真是艰辛，网上找了好久都无果，最后还不如直接看代码改来得快。。。&lt;/p&gt;
+
+&lt;p&gt;好在&lt;code class=&quot;highlighter-rouge&quot;&gt;highlightjs&lt;/code&gt;提供了这个：&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c1&quot;&gt;// ignore languages&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;script&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;hljs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;configure&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;ignore&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'text'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/script&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;然后看Jekyll源码，找到了 &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll/lib/jekyll/converters/markdown/kramdown_parser.rb&lt;/code&gt; (see &lt;a href=&quot;https://github.com/jekyll/jekyll/blob/57fd5f887da1189a16bdfbb982d75f725c38d725/lib/jekyll/converters/markdown/kramdown_parser.rb&quot;&gt;code&lt;/a&gt;)&lt;/p&gt;
+
+&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;convert&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;content&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;no&quot;&gt;Kramdown&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;new&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;content&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;vi&quot;&gt;@config&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;to_html&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;接着看kramdown源码，找到了&lt;code class=&quot;highlighter-rouge&quot;&gt;kramdown/lib/kramdown/converter/html.rb&lt;/code&gt; (see &lt;a href=&quot;https://github.com/gettalong/kramdown/blob/f4cdae257159ce0addf542739fed262e4a2cf401/lib/kramdown/converter/html.rb&quot;&gt;code&lt;/a&gt;)&lt;/p&gt;
+
+&lt;p&gt;在我的本地电脑中，相关文件位于&lt;code class=&quot;highlighter-rouge&quot;&gt;/usr/local/lib/ruby/gems/2.4.0/gems/kramdown-1.14.0/lib/kramdown/converter/html.rb&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;找到&lt;code class=&quot;highlighter-rouge&quot;&gt;def convert_codeblock(el, indent)&lt;/code&gt;函数进行修改：&lt;/p&gt;
+
+&lt;p&gt;在代码&lt;code class=&quot;highlighter-rouge&quot;&gt;code_attr['class'] = &quot;language-#{lang}&quot; if lang&lt;/code&gt; 前添加：&lt;/p&gt;
+
+&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;lang&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;nil?&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;lang&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;text&quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;并将代码&lt;code class=&quot;highlighter-rouge&quot;&gt;if highlighted_code&lt;/code&gt; 改为 &lt;code class=&quot;highlighter-rouge&quot;&gt;if highlighted_code &amp;amp;&amp;amp; lang&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;（其中，&lt;code class=&quot;highlighter-rouge&quot;&gt;nil&lt;/code&gt;是判空的意思。）&lt;/p&gt;
+
+&lt;p&gt;这样在不指明语言的时候，不高亮显示。&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;上面是mac环境下，可以直接改代码。但是在linux环境下，只有一个二进制执行文件。&lt;/p&gt;
+
+&lt;p&gt;于是，先删除原有的：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;$ sudo gem uninstall kramdown
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;然后在官网&lt;a href=&quot;https://github.com/gettalong/kramdown/releases&quot;&gt;下载源码&lt;/a&gt;重新安装：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;$ ruby setup.rb config
+$ ruby setup.rb setup
+$ ruby setup.rb install
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;好吧，暂时没弄好。。。&lt;/p&gt;
+
+&lt;h2 id=&quot;else&quot;&gt;Else&lt;/h2&gt;
+
+&lt;h3 id=&quot;permalinks&quot;&gt;Permalinks&lt;/h3&gt;
+
+&lt;p&gt;在&lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt;中设置，如：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;permalink: /:categories/:year/:month/:day/:title.html
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h3 id=&quot;footer&quot;&gt;footer&lt;/h3&gt;
+
+&lt;p&gt;当页面内容长度不够时，footer显示位置可能有问题。&lt;/p&gt;
+
+&lt;p&gt;让footer内容永远处于最末端：&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;$height-footer: 40px;
+
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+    position: relative;
+    padding-bottom: $height-footer;
+}
+
+.footer {
+    bottom: 0;
+    width: 100%;
+    position: absolute;
+    height: $height-footer;
+}
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;子元素的百分比高度也可以基于父元素的百分比高度，前提是父元素的父元素必须有一个明确的高度。要使&lt;code class=&quot;highlighter-rouge&quot;&gt;min-height&lt;/code&gt;的百分比值生效，其父元素的&lt;code class=&quot;highlighter-rouge&quot;&gt;height&lt;/code&gt;值必须为一个固定的高度或者是一个有效的百分比高度。&lt;/p&gt;
+
+&lt;h2 id=&quot;problems&quot;&gt;Problems&lt;/h2&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;{{ xxx }}&lt;/code&gt; 或者 &lt;code class=&quot;highlighter-rouge&quot;&gt;{% xxx %}&lt;/code&gt; 显示不出来。&lt;/p&gt;
+
+&lt;p&gt;解决方式：&lt;/p&gt;
+
+&lt;p&gt;（1）&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;\{\{ xxx \}\}
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;（2）参考：&lt;a href=&quot;https://stackoverflow.com/questions/24102498/escaping-double-curly-braces-inside-a-markdown-code-block-in-jekyll&quot;&gt;Escaping double curly braces inside a markdown code block in Jekyll&lt;/a&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;{% raw %}    
+This is a test: {{ xxx }}
+{% endraw %}
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;（3）那么问题又来了，如何显示上面的 raw 和 endraw 呢？参考：&lt;a href=&quot;http://www.cnblogs.com/OceanHeaven/p/6959669.html&quot;&gt;jekyll 如何转义字符&lt;/a&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;server {
+    listen [::]:80;
+    server_name comments.lszero.com;
+    
+    location /isso {
+        proxy_pass http://localhost:8090;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header Host $host;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_set_header X-Script-Name /isso;
+    }
+}
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+</description>
+        <pubDate>Tue, 01 Aug 2017 20:00:00 +0800</pubDate>
+        <link>http://localhost:4000/coding4fun/2017/08/01/static-website-with-jekyll/</link>
+        <guid isPermaLink="true">http://localhost:4000/coding4fun/2017/08/01/static-website-with-jekyll/</guid>
+        
+        <category>github</category>
+        
+        <category>jekyll</category>
+        
+        <category>bootstrap</category>
+        
+        
+        <category>coding4fun</category>
         
       </item>
     

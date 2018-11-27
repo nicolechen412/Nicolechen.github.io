@@ -266,27 +266,6 @@
 
 
 
-
-
-
-<!-- Gitment -->
-<div id="container"></div>
-<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
-<script>
-    var gitment = new Gitment({
-    id: '页面 ID', // 可选。默认为 location.href
-    owner: 'nicolechen412',
-    repo: 'nicolechen412.github.io',
-    oauth: {
-        client_id: 'e5c028898228bb8369d8',
-        client_secret: '9541d8e85a92babd1ab488d891b54a55c37f23fb',
-    },
-    })
-    gitment.render('container')
-</script>
-
-
 <!-- Post Content -->
 <article>
     <div class="container">
@@ -464,9 +443,9 @@
                 <ul class="pager">
                     
                     <li class="previous">
-                        <a href="/2017/07/12/upgrading-eleme-to-pwa/" data-toggle="tooltip" data-placement="top" title="饿了么的 PWA 升级实践">
+                        <a href="/coding4fun/2017/08/01/static-website-with-jekyll/" data-toggle="tooltip" data-placement="top" title="从WordPress到静态网站">
                         Previous<br>
-                        <span>饿了么的 PWA 升级实践</span>
+                        <span>从WordPress到静态网站</span>
                         </a>
                     </li>
                     
@@ -489,6 +468,32 @@
                 <!-- disqus 评论框 end -->
                 
 
+                
+
+
+                
+                <!-- gitment 评论框 start -->
+                <div id="cloud-tie-wrapper" class="cloud-tie-wrapper">
+                <!-- Gitment -->
+                <div id="container"></div>
+                <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+                <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+                <script>
+                    var gitment = new Gitment({
+                    id: '页面 ID', // 可选。默认为 location.href
+                    owner: 'nicolechen412',
+                    repo: 'nicolechen412.github.io',
+                    oauth: {
+                        client_id: 'e5c028898228bb8369d8',
+                        client_secret: '9541d8e85a92babd1ab488d891b54a55c37f23fb',
+                    },
+                    })
+                    gitment.render('container')
+</script>
+
+
+                </div>
+                <!-- 网易云跟帖 评论框 end -->
                 
             </div>  
 
@@ -522,12 +527,6 @@
 
                 <!-- Friends Blog -->
                 
-<hr>
-<h5>FRIENDS</h5>
-<ul class="list-inline">
-  
-</ul>
-
             </div>
         </div>
     </div>
@@ -591,6 +590,8 @@
         }
     }
 </style>
+
+
 
 
 
@@ -701,21 +702,6 @@
 
 
 <!-- Google Analytics -->
-
-<script>
-    // dynamic User by Hux
-    var _gaId = 'UA-49627206-1';
-    var _gaDomain = 'huangxuan.me';
-
-    // Originial
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-    ga('create', _gaId, _gaDomain);
-    ga('send', 'pageview');
-</script>
 
 
 

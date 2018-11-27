@@ -32,7 +32,15 @@ anchorjs: true                         # if you want to customize anchor. check 
 # If you have timezone issue (e.g. #68) in China, uncomment to use this:
 #timezone: CN  
 
-
+markdown: kramdown
+kramdown:
+  # input: GFM                            # use Github Flavored Markdown !important
+  syntax_highlighter_opts:
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+      start_line: 1
 
 # Gems
 # from PR#40, to support local preview for Jekyll 3.0
@@ -46,15 +54,10 @@ plugins: [jekyll-paginate]
 # replace redcarpet to kramdown,
 # although redcarpet can auto highlight code, the lack of header-id make the catalog impossible, so I switch to kramdown
 # document: http://jekyllrb.com/docs/configuration/#kramdown
-markdown: kramdown
-kramdown:
-  input: GFM                            # use Github Flavored Markdown !important
-  syntax_highlighter_opts:
-    span:
-      line_numbers: false
-    block:
-      line_numbers: true
-      start_line: 1
+# markdown: redcarpet
+# redcarpet:
+#     extensions: [ "hard_wrap","autolink", "tables", "strikethrough", "superscript", "with_toc_data", "highlight", "prettify","no_intra_emphasis"]
+
 
 
 
@@ -64,6 +67,8 @@ disqus_username: Nicole
 # Netease settings
 netease_comment: false
 
+# Gitment settings
+gitment_comment: true
 
 
 # Analytics settings
@@ -71,8 +76,8 @@ netease_comment: false
 # ba_track_id: [your track id]
 
 # Google Analytics
-ga_track_id: 'UA-49627206-1'            # Format: UA-xxxxxx-xx
-ga_domain: huangxuan.me
+# ga_track_id: 'UA-49627206-1'            # Format: UA-xxxxxx-xx
+# ga_domain: huangxuan.me
 
 
 
@@ -100,13 +105,13 @@ page-mathjax: false
 
 
 
-# Friends
-friends: [
-    #{
-    #     title: "Su",
-    #     href: "http://su.gallery/"
-    # },{
-    #    title: "乱序",
-    #    href: "http://mida.re/"
-    #}
-]
+# # Friends
+# friends: [
+#     #{
+#     #     title: "Su",
+#     #     href: "http://su.gallery/"
+#     # },{
+#     #    title: "乱序",
+#     #    href: "http://mida.re/"
+#     #}
+# ]

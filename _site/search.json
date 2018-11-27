@@ -19,6 +19,15 @@
     } ,
   
     {
+      "title"    : "从WordPress到静态网站",
+      "title-lower"    : "从wordpress到静态网站",
+      "categories" : "coding4fun",
+      "tags"     : "github, jekyll, bootstrap",
+      "url"      : "/coding4fun/2017/08/01/static-website-with-jekyll/",
+      "date"     : "2017-08-01 20:00:00 +0800"
+    } ,
+  
+    {
       "title"    : "饿了么的 PWA 升级实践",
       "title-lower"    : "饿了么的 pwa 升级实践",
       "categories" : "",
