@@ -1283,31 +1283,45 @@ This is a test: {{ xxx }}
 
                 
 
-
-                
                 <!-- gitment 评论框 start -->
-                <div id="cloud-tie-wrapper" class="cloud-tie-wrapper">
-                <!-- Gitment -->
-                <div id="container"></div>
-                <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-                <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
-                <script>
-                    var gitment = new Gitment({
-                    id: '页面 ID', // 可选。默认为 location.href
-                    owner: 'nicolechen412',
-                    repo: 'nicolechen412.github.io',
-                    oauth: {
-                        client_id: 'e5c028898228bb8369d8',
-                        client_secret: '9541d8e85a92babd1ab488d891b54a55c37f23fb',
-                    },
-                    })
-                    gitment.render('container')
-</script>
-
-
-                </div>
-                <!-- 网易云跟帖 评论框 end -->
                 
+
+
+                <div id="lv-container" data-id="city" data-uid="MTAyMC80MTMxNi8xNzg2Mw==">
+                    <script type="text/javascript">
+                   (function(d, s) {
+                       var j, e = d.getElementsByTagName(s)[0];
+                
+                       if (typeof LivereTower === 'function') { return; }
+                
+                       j = d.createElement(s);
+                       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                       j.async = true;
+                
+                       e.parentNode.insertBefore(j, e);
+                   })(document, 'script');
+                    </script>
+                <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+                </div>
+                <!-- <div id="cloud-tie-wrapper" class="cloud-tie-wrapper">
+                    <div id="container"></div>
+                    <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+                    <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+                    <script>
+                        var gitment = new Gitment({
+                        id: '页面 ID', // 可选。默认为 location.href
+                        owner: 'nicolechen412 ',
+                        repo: 'Nicolechen412.github.io',
+                        oauth: {
+                            client_id: '92363e9ee6435d827a13',
+                            client_secret: 'b1f5048ff067b140627bb6c9bb2825751acdff17',
+                        },
+                        })
+                        gitment.render('container')
+                    </script>
+                </div> -->
+                
+                <!-- gitment 评论框 end -->
             </div>  
 
     <!-- Side Catalog Container -->
@@ -1348,11 +1362,12 @@ This is a test: {{ xxx }}
 <!-- add support for mathjax by voleking-->
 
 
-
-
-
+<!-- 网易云跟帖JS代码 start -->
+<!--  -->
+<!-- 网易云跟帖JS代码 end -->
 
 <!-- disqus 公共JS代码 start (一个网页只需插入一次) -->
+<!-- 
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES * * */
     var disqus_shortname = "Nicole";
@@ -1365,8 +1380,9 @@ This is a test: {{ xxx }}
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
 </script>
-<!-- disqus 公共JS代码 end -->
 
+ -->
+<!-- disqus 公共JS代码 end -->
 
 
 
@@ -1439,9 +1455,7 @@ This is a test: {{ xxx }}
 </ul>
 
                 <p class="copyright text-muted">
-                    Copyright &copy; Nicole Blog 2018
-                    <br>
-                    Powered by <a href="http://huangxuan.me">Hux Blog</a> |
+                    &copy; Nicole Blog 2018 | 
                     <iframe
                         style="margin-left: 2px; margin-bottom:-5px;"
                         frameborder="0" scrolling="0" width="100px" height="20px"
