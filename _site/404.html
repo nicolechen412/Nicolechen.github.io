@@ -110,6 +110,8 @@
                     
                     
                     
+                    
+                    
                 </ul>
             </div>
         </div>
@@ -117,6 +119,38 @@
     </div>
     <!-- /.container -->
 </nav>
+
+
+
+<!-- search start -->
+
+<!-- HTML elements for search-->
+<div id="search-container" style="float:right;position: fixed;right:0px; bottom:10px; z-index:999999;background:#eeeeee;padding:10px 10px 0px 10px;">
+    <input type="text" id="search-input" placeholder="search..." style="border:2px solid;border-radius:25px;padding-left:10px !important;" >
+    <ul id="results-container" style="max-width:300px;"></ul>
+  </div>
+  
+  <!-- script pointing to jekyll-search.js-->
+  <script src="/js/simple-jekyll-search.min.js"></script>
+  
+   <script>
+        window.simpleJekyllSearch = new SimpleJekyllSearch({
+          searchInput: document.getElementById('search-input'),
+          resultsContainer: document.getElementById('results-container'),
+          json: '/search.json',
+          searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a></li>',
+          noResultsText: 'No results found',
+          limit: 5,
+          fuzzy: false,
+          exclude: ['Welcome']
+        })
+      </script>
+
+
+<!-- search end -->
+
+
+
 <script>
     // Drop Bootstarp low-performance Navbar
     // Use customize navbar with high-quality material design animation
@@ -235,13 +269,20 @@
                     <iframe
                         style="margin-left: 2px; margin-bottom:-5px;"
                         frameborder="0" scrolling="0" width="100px" height="20px"
-                        src="https://ghbtns.com/github-btn.html?user=huxpro&repo=huxpro.github.io&type=star&count=true" >
+                        src="https://ghbtns.com/github-btn.html?user=Nicolechen412&repo=Nicolechen412.github.io&type=star&count=true" >
                     </iframe>
                 </p>
             </div>
         </div>
     </div>
 </footer>
+
+
+
+
+
+
+
 
 <!-- jQuery -->
 <script src="/js/jquery.min.js "></script>
@@ -259,17 +300,7 @@
 <script src="/js/sw-registration.js "></script>
 
 
-<!-- async load function -->
-<script>
-    function async(u, c) {
-      var d = document, t = 'script',
-          o = d.createElement(t),
-          s = d.getElementsByTagName(t)[0];
-      o.src = u;
-      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
-      s.parentNode.insertBefore(o, s);
-    }
-</script>
+
 
 <!--
      Because of the native support for backtick-style fenced code blocks
@@ -320,10 +351,15 @@
 
 
 
-<!-- Image to hack wechat -->
-<img src="/img/icon_wechat.png" width="0" height="0" />
-<!-- Migrate from head to bottom, no longer block render and still work -->
 
+
+
+    
+
+
+<!-- Image to hack wechat -->
+<!-- <img src="/img/icon_wechat.png" width="0" height="0" /> -->
+<!-- Migrate from head to bottom, no longer block render and still work -->
 </body>
 
 </html>
